@@ -31,3 +31,10 @@ def test_contact_page_loads():
     assert contact.open_contact_page(), "Contact page did not load correctly"
     driver.quit()
 
+def test_download_reesume():
+    driver = get_driver()
+    resume = HomePage(driver)
+    resume.click(HomePage.RESUME_LINK)
+    assert resume.download_resume(), "Failed to download resume"
+    driver.quit()
+

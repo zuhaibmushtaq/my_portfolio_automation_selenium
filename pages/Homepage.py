@@ -7,6 +7,7 @@ class HomePage(BasePage):
     SKILLS_LINK = (By.LINK_TEXT, "Skills")
     LANG_LINK = (By.LINK_TEXT, "Languages") # example, adjust locator
     CONTACT_LINK = (By.LINK_TEXT, "Contact")
+    RESUME_LINK = (By.LINK_TEXT, "Download Resume") # example, adjust locator
 
     def is_home_loaded(self):
         return self.is_visible(self.HOME_LINK)
@@ -26,6 +27,10 @@ class HomePage(BasePage):
     def open_contact_page(self):
         self.click(self.CONTACT_LINK)
         return self.is_visible(self.CONTACT_LINK)
+    
+    def download_resume(self):
+        self.click(self.RESUME_LINK)
+        # Additional logic to verify download can be added here
 
 
 
